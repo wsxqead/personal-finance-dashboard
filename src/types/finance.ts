@@ -98,6 +98,12 @@ export interface Loan {
   monthlyPayment?: number;
   /** 금융사 상환 일정표 (src/data/schedules/) — 해당 월은 자동 계산보다 우선 */
   schedule?: ManualPayment[];
+  /** 중도상환수수료율(%) — 추가 상환 금액 × 이 비율로 단순 계산. 생략하면 "수수료 정보 미입력" */
+  prepaymentFeeRate?: number;
+  /** 중도상환수수료가 부과되는 마지막 월 (YYYY-MM). 이후에는 수수료 없음 */
+  prepaymentFeeEndMonth?: YearMonth;
+  /** 수수료율이 금융사에서 확인한 값이 아니라 가정값이면 true (화면에 "가정" 표시) */
+  prepaymentFeeAssumed?: boolean;
   note?: string;
 }
 

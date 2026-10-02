@@ -44,6 +44,10 @@ export const loans: Loan[] = [
     maturityMonth: "2029-05",
     paymentDay: 25,
 
+    // 중도상환수수료: 확인 전이라 2% 가정 (실행일 미확인 — 면제 종료월 없이 항상 적용)
+    prepaymentFeeRate: 2,
+    prepaymentFeeAssumed: true,
+
     monthlyPrincipal: undefined,
     monthlyPayment: undefined,
 
@@ -68,6 +72,11 @@ export const loans: Loan[] = [
     maturityMonth: "2029-08",
     paymentDay: 5,
 
+    // 중도상환수수료: 확인 전이라 2% 가정 (실행 후 3년간 부과 → 2028-08까지)
+    prepaymentFeeRate: 2,
+    prepaymentFeeEndMonth: "2028-08",
+    prepaymentFeeAssumed: true,
+
     monthlyPrincipal: undefined,
     monthlyPayment: undefined,
 
@@ -91,6 +100,11 @@ export const loans: Loan[] = [
     startedAt: "2025-12-15",
     maturityMonth: "2030-12",
     paymentDay: 15,
+
+    // 중도상환수수료: 확인 전이라 2% 가정 (실행 후 3년간 부과 → 2028-11까지)
+    prepaymentFeeRate: 2,
+    prepaymentFeeEndMonth: "2028-11",
+    prepaymentFeeAssumed: true,
 
     monthlyPrincipal: undefined,
     // manual 대출에서는 계산에 쓰지 않고 "월 정기 납입" 참고값으로만 표시
@@ -124,6 +138,11 @@ export const loans: Loan[] = [
     totalInstallments: 36,
     paidThroughMonth: "2026-10",
 
+    // 중도상환수수료: 확인 전이라 2% 가정 (실행 후 3년간 부과 → 2028-12까지)
+    prepaymentFeeRate: 2,
+    prepaymentFeeEndMonth: "2028-12",
+    prepaymentFeeAssumed: true,
+
     monthlyPrincipal: undefined,
     monthlyPayment: undefined,
 
@@ -155,6 +174,11 @@ export const loans: Loan[] = [
     firstPaymentMonth: "2026-05",
     totalInstallments: 36,
     paidThroughMonth: "2026-10",
+
+    // 중도상환수수료: 확인 전이라 2% 가정 (실행 후 3년간 부과 → 2029-03까지)
+    prepaymentFeeRate: 2,
+    prepaymentFeeEndMonth: "2029-03",
+    prepaymentFeeAssumed: true,
 
     monthlyPrincipal: undefined,
     monthlyPayment: undefined,
@@ -188,6 +212,11 @@ export const loans: Loan[] = [
     // 2026-10(3회차)까지 납입 완료 — openingBalance 2,669,494원은 10월 납입 후 잔액
     paidThroughMonth: "2026-10",
 
+    // 중도상환수수료: 확인 전이라 2% 가정 (실행 후 3년간 부과 → 2029-06까지)
+    prepaymentFeeRate: 2,
+    prepaymentFeeEndMonth: "2029-06",
+    prepaymentFeeAssumed: true,
+
     monthlyPrincipal: undefined,
     monthlyPayment: undefined,
 
@@ -217,6 +246,11 @@ export const loans: Loan[] = [
     // 2026-09-29 실행, 1회차 2026-11-01, 총 48회 → 48회차 2030-10 (계약 만기)
     firstPaymentMonth: "2026-11",
     totalInstallments: 48,
+
+    // 중도상환수수료: 확인 전이라 2% 가정 (실행 후 3년간 부과 → 2029-08까지)
+    prepaymentFeeRate: 2,
+    prepaymentFeeEndMonth: "2029-08",
+    prepaymentFeeAssumed: true,
 
     monthlyPrincipal: undefined,
     monthlyPayment: undefined,

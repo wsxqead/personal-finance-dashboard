@@ -13,7 +13,7 @@ export function MobileNav() {
       aria-label="주 메뉴"
       className="fixed inset-x-0 bottom-0 z-30 border-t bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-sm md:hidden"
     >
-      <ul className="grid grid-cols-4">
+      <ul className="grid grid-cols-5">
         {navItems.map(({ href, label, icon: Icon }) => {
           const active = isActivePath(pathname, href);
           return (
