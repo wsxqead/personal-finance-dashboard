@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* next-themes 가 <html class="dark"> 를 붙이면 dark: 변형이 적용됩니다. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7faf5;
+  --surface: #ffffff;
+  --surface-alt: #f1f6ed;
+  --primary: #9edc78;
+  --primary-strong: #72c34a;
+  --primary-soft: #eaf7e2;
+  /* 텍스트로 쓰는 초록 — 흰 배경에서 읽히도록 더 짙게 */
+  --primary-text: #3a8520;
+  --border: #e4eae0;
+  --foreground: #20251e;
+  --muted: #6d7568;
+  /* 부채 증가 / 신규 대출 */
+  --increase: #b8650a;
+  --increase-soft: #fdf1e1;
+  /* 오류 등 정말 필요한 경우만 */
+  --danger: #c2412d;
+
+  --chart-line: #4e9f2a;
+  --chart-forecast: #8fbf74;
+  --chart-grid: #e9eee6;
+  --chart-marker: #c2700e;
+  --chart-interest: #b3bfab;
+  --chart-principal-forecast: #bbe0a4;
+  --chart-interest-forecast: #dfe6da;
+
+  --shadow-soft: 0 1px 2px rgb(32 37 30 / 0.04), 0 1px 1px rgb(32 37 30 / 0.02);
+}
+
+.dark {
+  --background: #111410;
+  --surface: #181c16;
+  --surface-alt: #20251d;
+  --primary: #a7e583;
+  --primary-strong: #8fd467;
+  --primary-soft: #243020;
+  --primary-text: #a7e583;
+  --border: #30372c;
+  --foreground: #f2f5ef;
+  --muted: #9ea899;
+  --increase: #f0a848;
+  --increase-soft: #3a2c17;
+  --danger: #f08a78;
+
+  --chart-line: #92d86c;
+  --chart-forecast: #6a8f58;
+  --chart-grid: #262c23;
+  --chart-marker: #f0a848;
+  --chart-interest: #75816e;
+  --chart-principal-forecast: #4f7140;
+  --chart-interest-forecast: #3b4336;
+
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-text: var(--primary-text);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-increase: var(--increase);
+  --color-increase-soft: var(--increase-soft);
+  --color-danger: var(--danger);
+  --shadow-soft: var(--shadow-soft);
+  --font-sans: var(--font-geist-sans), "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    word-break: keep-all;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+}
+
+/* 숫자는 자릿수가 흔들리지 않도록 고정폭 숫자 사용 */
+@utility num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
