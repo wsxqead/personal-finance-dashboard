@@ -11,11 +11,11 @@ export const cards: Card[] = [
     name: "신한카드",
     issuer: "신한카드",
 
-    originalUsedAmount: 3_740_000,
-    outstandingBalance: 2_529_600,
+    creditLimit: 7_000_000,
+    // 2026년 10월분 결제 후 남은 금액
+    outstandingBalance: 1_647_190,
 
     paymentDay: 27,
-    currentPayment: 777_074,
   },
   { id: "card-sub", name: "구독 카드", issuer: "롯데 카드", paymentDay: 25, expectedMonthly: 40_000 },
 ];

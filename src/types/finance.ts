@@ -166,8 +166,8 @@ export interface Card {
   currentPayment?: number;
   /** 계획에 쓰는 월 예상 결제액. 생략하면 currentPayment 를 사용 */
   expectedMonthly?: number;
-  /** 할부 등으로 처음 이용한 금액 */
-  originalUsedAmount?: number;
+  /** 카드 총 한도 */
+  creditLimit?: number;
   /** 아직 결제되지 않고 남은 금액 (할부 잔액 포함) */
   outstandingBalance?: number;
   note?: string;

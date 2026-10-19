@@ -77,16 +77,20 @@ export default function ExpensesPage() {
                         <span className="text-muted">미결제 금액</span>
                         <Amount value={card.outstandingBalance} className="font-semibold" />
                       </div>
-                      {card.originalUsedAmount !== undefined && (
+                      {card.creditLimit !== undefined && (
                         <>
                           <div className="mt-1 flex justify-between gap-3 text-muted">
-                            <span>처음 이용금액</span>
-                            <Amount value={card.originalUsedAmount} tone="muted" />
+                            <span>총 한도</span>
+                            <Amount value={card.creditLimit} tone="muted" />
+                          </div>
+                          <div className="mt-1 flex justify-between gap-3 text-muted">
+                            <span>남은 한도</span>
+                            <Amount value={card.creditLimit - card.outstandingBalance} tone="muted" />
                           </div>
                           <Progress
-                            value={1 - card.outstandingBalance / card.originalUsedAmount}
+                            value={card.outstandingBalance / card.creditLimit}
                             className="mt-2"
-                            label={`${card.name} 결제 진행률`}
+                            label={`${card.name} 한도 사용률`}
                           />
                         </>
                       )}
